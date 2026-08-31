@@ -231,3 +231,14 @@
     }
 }
 
+
+/* Price */
+.esh-price:before {
+    content: '$';
+}
+
+@media screen and (min-width: 1800px) {
+    .esh-header-title {
+        font-size: 4rem;
+    }
+}

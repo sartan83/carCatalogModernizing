@@ -124,6 +124,18 @@ public class CatalogPagesTests(CatalogPagesApplicationFactory factory) : IClassF
         Assert.Matches($"<a href=\"/\" class=\"[^\"]+\">{Regex.Escape(text)}</a>", html);
     }
 
+    [Theory]
+    [InlineData("/css/Site.css", ".esh-price:before")]
+    [InlineData("/css/custom.css", ".form-group")]
+    [InlineData("/css/custom.css", ".text-right")]
+    [InlineData("/css/custom.css", ".col-md-offset-2")]
+    public async Task Stylesheets_StillDefineTheRulesTheLegacyMarkupReliesOn(string url, string rule)
+    {
+        var css = await factory.CreateClient().GetStringAsync(url);
+
+        Assert.Contains(rule, css);
+    }
+
     private static async Task<Dictionary<string, string>> GetAntiForgeryFieldsAsync(HttpClient client, string url)
     {
         var html = await client.GetStringAsync(url);

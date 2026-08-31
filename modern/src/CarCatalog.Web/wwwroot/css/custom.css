@@ -20,3 +20,18 @@
     vertical-align: middle;
     border-bottom: 1px solid #eee;
 }
+
+/* The views were ported verbatim from Bootstrap 4 markup; Bootstrap 5 dropped these classes. */
+.form-group {
+    margin-bottom: 1rem;
+}
+
+.text-right {
+    text-align: right;
+}
+
+@media (min-width: 768px) {
+    .col-md-offset-2 {
+        margin-left: 16.666667%;
+    }
+}

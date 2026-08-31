@@ -144,6 +144,17 @@ public class CatalogPagesTests : IClassFixture<CatalogWebApplicationFactory>
         Assert.Contains("$507,000.00", html);
     }
 
+    [Theory]
+    [InlineData(".form-group")]
+    [InlineData(".text-right")]
+    [InlineData(".col-md-offset-2")]
+    public async Task CustomStylesheet_StillDefinesTheRulesTheLegacyMarkupReliesOn(string rule)
+    {
+        var css = await factory.CreateClient().GetStringAsync("/css/custom.css");
+
+        Assert.Contains(rule, css);
+    }
+
     private static async Task<AntiForgeryForm> GetAntiForgeryFormAsync(HttpClient client, string url)
     {
         var html = await client.GetStringAsync(url);

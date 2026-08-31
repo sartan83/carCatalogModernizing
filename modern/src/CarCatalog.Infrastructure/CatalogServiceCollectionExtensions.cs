@@ -29,4 +29,24 @@ public static class CatalogServiceCollectionExtensions
 
         return services;
     }
+
+    /// <summary>
+    /// Adds a readiness check that fails until the catalog schema is migrated and seeded, so that
+    /// orchestrators keep traffic away from apps whose database is not ready yet.
+    /// </summary>
+    public static IServiceCollection AddCatalogHealthChecks(
+        this IServiceCollection services,
+        IConfiguration configuration)
+    {
+        var checks = services.AddHealthChecks();
+
+        if (!configuration.GetValue("Catalog:UseMockData", false))
+        {
+            checks.AddDbContextCheck<CatalogDbContext>(
+                "catalog-database",
+                customTestQuery: (db, cancellationToken) => db.CatalogBrands.AnyAsync(cancellationToken));
+        }
+
+        return services;
+    }
 }

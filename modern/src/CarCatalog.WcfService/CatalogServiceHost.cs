@@ -20,7 +20,7 @@ public static class CatalogServiceHost
         builder.Services.AddServiceModelServices();
         builder.Services.AddServiceModelMetadata();
         builder.Services.AddSingleton<IServiceBehavior, UseRequestHeadersForMetadataAddressBehavior>();
-        builder.Services.AddHealthChecks();
+        builder.Services.AddCatalogHealthChecks(builder.Configuration);
 
         var app = builder.Build();
 

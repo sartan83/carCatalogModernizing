@@ -4,7 +4,7 @@ var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddControllersWithViews();
 builder.Services.AddCatalog(builder.Configuration);
-builder.Services.AddHealthChecks();
+builder.Services.AddCatalogHealthChecks(builder.Configuration);
 
 var app = builder.Build();
 

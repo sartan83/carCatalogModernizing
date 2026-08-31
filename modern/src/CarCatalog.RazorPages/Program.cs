@@ -9,7 +9,7 @@ builder.Services.AddRazorPages(options =>
     options.Conventions.AddPageRoute("/Index", "Default/index/{index:int}/size/{size:int}");
 });
 builder.Services.AddCatalog(builder.Configuration);
-builder.Services.AddHealthChecks();
+builder.Services.AddCatalogHealthChecks(builder.Configuration);
 
 var app = builder.Build();
 

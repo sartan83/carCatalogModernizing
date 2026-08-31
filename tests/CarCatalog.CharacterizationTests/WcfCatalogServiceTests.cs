@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
 using CarCatalog.CharacterizationTests.Fakes;
 using CarCatalogWCFService;
@@ -141,19 +142,17 @@ namespace CarCatalog.CharacterizationTests
                 var service = new CatalogService(context);
                 var existing = context.CatalogItemsStocks.Single(s => s.StockId == 1);
 
-                // The overwrite path marks the entity as Modified through DbContext.Entry,
-                // which the in-memory context cannot produce, so it signals the call instead.
-                var tracked = Assert.Throws<EntryTrackedException>(() =>
-                    service.CreateAvailableStock(new CatalogItemsStock
-                    {
-                        CatalogItemId = existing.CatalogItemId,
-                        Date = existing.Date,
-                        AvailableStock = 5
-                    }));
+                service.CreateAvailableStock(new CatalogItemsStock
+                {
+                    CatalogItemId = existing.CatalogItemId,
+                    Date = existing.Date,
+                    AvailableStock = 5
+                });
 
-                Assert.Same(existing, tracked.Entity);
                 Assert.Equal(5, existing.AvailableStock);
+                Assert.Equal(EntityState.Modified, context.Entry(existing).State);
                 Assert.Equal(6, context.CatalogItemsStocks.Count());
+                Assert.Equal(1, context.SaveChangesCount);
             }
         }
 

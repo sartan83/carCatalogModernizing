@@ -20,7 +20,7 @@ You can download its related guidance with this free guide/eBook (2nd Edition):
 
 The modernization with Windows Containers significantly improves the deployments for DevOps, without having to change the app's architecture or C# code.
 
-The sample apps are simple web apps for the internal backoffice of a car maker/dealer group (a "Ferrari Catalog Manager") so employees can update the vehicle catalog: sports cars, GTs, SUVs and spare parts from marques such as Ferrari, Lamborghini, Porsche and Maserati.
+The sample apps are simple web apps for the internal backoffice of a car maker/dealer group (an "Auto Catalog Manager") so employees can update the vehicle catalog: sports cars, GTs, SUVs and spare parts from fictional marques such as Velocari, Toranti, Nordwerk and Aurelia.
 Both apps are therefore simple CRUD web application to update data into a SQL Server database. 
 
 The catalog domain is modelled with three entities: `CatalogBrand` (the marque), `CatalogType` (the vehicle/part category) and `CatalogItem` (the vehicle or part itself, with price, stock and picture).

@@ -36,22 +36,22 @@ namespace eShopPorted.Migrations
                         new
                         {
                             Id = 1,
-                            Brand = "Ferrari"
+                            Brand = "Velocari"
                         },
                         new
                         {
                             Id = 2,
-                            Brand = "Lamborghini"
+                            Brand = "Toranti"
                         },
                         new
                         {
                             Id = 3,
-                            Brand = "Porsche"
+                            Brand = "Nordwerk"
                         },
                         new
                         {
                             Id = 4,
-                            Brand = "Maserati"
+                            Brand = "Aurelia"
                         },
                         new
                         {
@@ -104,9 +104,9 @@ namespace eShopPorted.Migrations
                             AvailableStock = 100,
                             CatalogBrandId = 1,
                             CatalogTypeId = 1,
-                            Description = "Ferrari SF90 Stradale plug-in hybrid supercar with 1000 cv",
+                            Description = "Velocari Strada SV plug-in hybrid supercar with 1000 cv",
                             MaxStockThreshold = 0,
-                            Name = "Ferrari SF90 Stradale",
+                            Name = "Velocari Strada SV",
                             OnReorder = false,
                             PictureFileName = "1.png",
                             Price = 507000m,
@@ -118,9 +118,9 @@ namespace eShopPorted.Migrations
                             AvailableStock = 100,
                             CatalogBrandId = 1,
                             CatalogTypeId = 1,
-                            Description = "Ferrari 296 GTB with 663 cv V6 hybrid powertrain",
+                            Description = "Velocari Tipo 6 with 663 cv V6 hybrid powertrain",
                             MaxStockThreshold = 0,
-                            Name = "Ferrari 296 GTB",
+                            Name = "Velocari Tipo 6",
                             OnReorder = false,
                             PictureFileName = "2.png",
                             Price = 320000m,
@@ -132,9 +132,9 @@ namespace eShopPorted.Migrations
                             AvailableStock = 100,
                             CatalogBrandId = 1,
                             CatalogTypeId = 2,
-                            Description = "Ferrari Roma front-engined V8 grand tourer",
+                            Description = "Velocari Aurora GT front-engined V8 grand tourer",
                             MaxStockThreshold = 0,
-                            Name = "Ferrari Roma",
+                            Name = "Velocari Aurora GT",
                             OnReorder = false,
                             PictureFileName = "3.png",
                             Price = 222000m,
@@ -146,9 +146,9 @@ namespace eShopPorted.Migrations
                             AvailableStock = 100,
                             CatalogBrandId = 1,
                             CatalogTypeId = 3,
-                            Description = "Ferrari Purosangue four-door four-seater V12",
+                            Description = "Velocari Terra X four-door four-seater V12",
                             MaxStockThreshold = 0,
-                            Name = "Ferrari Purosangue",
+                            Name = "Velocari Terra X",
                             OnReorder = false,
                             PictureFileName = "4.png",
                             Price = 390000m,
@@ -160,9 +160,9 @@ namespace eShopPorted.Migrations
                             AvailableStock = 100,
                             CatalogBrandId = 2,
                             CatalogTypeId = 1,
-                            Description = "Lamborghini Revuelto V12 hybrid flagship",
+                            Description = "Toranti Furente V12 hybrid flagship",
                             MaxStockThreshold = 0,
-                            Name = "Lamborghini Revuelto",
+                            Name = "Toranti Furente",
                             OnReorder = false,
                             PictureFileName = "5.png",
                             Price = 517000m,
@@ -174,9 +174,9 @@ namespace eShopPorted.Migrations
                             AvailableStock = 100,
                             CatalogBrandId = 2,
                             CatalogTypeId = 3,
-                            Description = "Lamborghini Urus Performante super SUV",
+                            Description = "Toranti Monte S super SUV",
                             MaxStockThreshold = 0,
-                            Name = "Lamborghini Urus Performante",
+                            Name = "Toranti Monte S",
                             OnReorder = false,
                             PictureFileName = "6.png",
                             Price = 260000m,
@@ -188,9 +188,9 @@ namespace eShopPorted.Migrations
                             AvailableStock = 100,
                             CatalogBrandId = 3,
                             CatalogTypeId = 1,
-                            Description = "Porsche 911 GT3 RS track-focused flat-six",
+                            Description = "Nordwerk RS9 track-focused flat-six",
                             MaxStockThreshold = 0,
-                            Name = "Porsche 911 GT3 RS",
+                            Name = "Nordwerk RS9",
                             OnReorder = false,
                             PictureFileName = "7.png",
                             Price = 241000m,
@@ -202,9 +202,9 @@ namespace eShopPorted.Migrations
                             AvailableStock = 100,
                             CatalogBrandId = 3,
                             CatalogTypeId = 3,
-                            Description = "Porsche Cayenne Turbo GT performance SUV",
+                            Description = "Nordwerk Terra Turbo performance SUV",
                             MaxStockThreshold = 0,
-                            Name = "Porsche Cayenne Turbo GT",
+                            Name = "Nordwerk Terra Turbo",
                             OnReorder = false,
                             PictureFileName = "8.png",
                             Price = 198000m,
@@ -216,9 +216,9 @@ namespace eShopPorted.Migrations
                             AvailableStock = 100,
                             CatalogBrandId = 4,
                             CatalogTypeId = 1,
-                            Description = "Maserati MC20 with Nettuno twin-turbo V6",
+                            Description = "Aurelia Nettare S with twin-turbo V6 and carbon tub",
                             MaxStockThreshold = 0,
-                            Name = "Maserati MC20",
+                            Name = "Aurelia Nettare S",
                             OnReorder = false,
                             PictureFileName = "9.png",
                             Price = 240000m,
@@ -230,9 +230,9 @@ namespace eShopPorted.Migrations
                             AvailableStock = 100,
                             CatalogBrandId = 4,
                             CatalogTypeId = 2,
-                            Description = "Maserati GranTurismo Trofeo V6 grand tourer",
+                            Description = "Aurelia Granluce V6 grand tourer",
                             MaxStockThreshold = 0,
-                            Name = "Maserati GranTurismo Trofeo",
+                            Name = "Aurelia Granluce",
                             OnReorder = false,
                             PictureFileName = "10.png",
                             Price = 175000m,

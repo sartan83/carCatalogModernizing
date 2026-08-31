@@ -542,7 +542,7 @@
             this.MaximizeBox = false;
             this.MaximumSize = new System.Drawing.Size(900, 900);
             this.Name = "CatalogView";
-            this.Text = "Ferrari Catalog Manager (WinForms)";
+            this.Text = "Auto Catalog Manager (WinForms)";
             this.tabControl.ResumeLayout(false);
             this.MainCatalog.ResumeLayout(false);
             this.tableLayoutPanel2.ResumeLayout(false);

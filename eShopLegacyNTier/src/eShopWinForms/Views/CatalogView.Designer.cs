@@ -565,7 +565,7 @@
             this.Controls.Add(this.tableLayoutPanel1);
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "CatalogView";
-            this.Text = "Ferrari Catalog Manager (WinForms)";
+            this.Text = "Auto Catalog Manager (WinForms)";
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tabControl.ResumeLayout(false);
             this.MainCatalog.ResumeLayout(false);

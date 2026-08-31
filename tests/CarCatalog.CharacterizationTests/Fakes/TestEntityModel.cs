@@ -19,7 +19,10 @@ namespace CarCatalog.CharacterizationTests.Fakes
             IEnumerable<CatalogItemsStock> stock = null,
             IEnumerable<DiscountItem> discounts = null)
         {
+            // The base constructor registers CatalogDBInitializer, whose Seed calls SaveChanges;
+            // both registrations are cleared so nothing reaches a database.
             Database.SetInitializer<EntityModel>(null);
+            Database.SetInitializer<TestEntityModel>(null);
 
             Configuration.LazyLoadingEnabled = false;
             Configuration.ProxyCreationEnabled = false;

@@ -1,0 +1,13 @@
+<Project>
+
+  <PropertyGroup>
+    <LangVersion>7.3</LangVersion>
+    <Company>CarCatalog</Company>
+    <Product>Auto Catalog Manager</Product>
+    <Copyright>Copyright (c) CarCatalog</Copyright>
+    <NeutralLanguage>en-US</NeutralLanguage>
+    <RestorePackagesWithLockFile>false</RestorePackagesWithLockFile>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+  </PropertyGroup>
+
+</Project>

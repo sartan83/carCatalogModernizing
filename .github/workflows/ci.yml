@@ -1,0 +1,71 @@
+name: CI
+
+on:
+  push:
+    branches: ['**']
+  pull_request:
+
+jobs:
+  build:
+    name: Build and test (.NET Framework)
+    runs-on: windows-latest
+
+    env:
+      Configuration: Release
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up MSBuild
+        uses: microsoft/setup-msbuild@v2
+
+      - name: Set up NuGet
+        uses: NuGet/setup-nuget@v2
+        with:
+          nuget-version: '6.x'
+
+      - name: Cache NuGet packages
+        uses: actions/cache@v4
+        with:
+          path: ~/.nuget/packages
+          key: nuget-${{ runner.os }}-${{ hashFiles('**/Directory.Packages.props', '**/*.csproj') }}
+          restore-keys: nuget-${{ runner.os }}-
+
+      - name: Restore
+        run: |
+          msbuild CarCatalogLegacyMVCSolution/CarCatalogLegacyMVC.sln -t:Restore -verbosity:minimal
+          msbuild CarCatalogLegacyWebFormsSolution/CarCatalogLegacyWebForms.sln -t:Restore -verbosity:minimal
+          msbuild CarCatalogLegacyNTier/CarCatalogLegacyNTier.sln -t:Restore -verbosity:minimal
+          msbuild tests/CarCatalog.CharacterizationTests/CarCatalog.CharacterizationTests.csproj -t:Restore -verbosity:minimal
+
+      - name: Build MVC solution
+        run: msbuild CarCatalogLegacyMVCSolution/CarCatalogLegacyMVC.sln -p:Configuration=Release -verbosity:minimal
+
+      - name: Build Web Forms solution
+        run: msbuild CarCatalogLegacyWebFormsSolution/CarCatalogLegacyWebForms.sln -p:Configuration=Release -verbosity:minimal
+
+      - name: Build N-Tier solution
+        run: msbuild CarCatalogLegacyNTier/CarCatalogLegacyNTier.sln -p:Configuration=Release -verbosity:minimal
+
+      - name: Build characterization tests
+        run: msbuild tests/CarCatalog.CharacterizationTests/CarCatalog.CharacterizationTests.csproj -p:Configuration=Release -verbosity:minimal
+
+      - name: Run characterization tests
+        shell: pwsh
+        run: |
+          $vswhere = "${env:ProgramFiles(x86)}\Microsoft Visual Studio\Installer\vswhere.exe"
+          $vstest = & $vswhere -latest -requires Microsoft.VisualStudio.Workload.ManagedDesktop Microsoft.VisualStudio.Workload.Web -find "Common7\IDE\Extensions\TestPlatform\vstest.console.exe" | Select-Object -First 1
+          if (-not $vstest) {
+            $vstest = & $vswhere -latest -find "Common7\IDE\Extensions\TestPlatform\vstest.console.exe" | Select-Object -First 1
+          }
+          if (-not $vstest) { throw "vstest.console.exe not found" }
+          & $vstest "tests\CarCatalog.CharacterizationTests\bin\Release\net472\CarCatalog.CharacterizationTests.dll" /Logger:trx /ResultsDirectory:TestResults
+          if ($LASTEXITCODE -ne 0) { throw "Characterization tests failed" }
+
+      - name: Upload test results
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: test-results
+          path: TestResults
+          if-no-files-found: ignore

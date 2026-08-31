@@ -1,0 +1,18 @@
+<Project>
+
+  <!-- CI images no longer ship the older .NET Framework targeting packs, so supply the reference
+       assemblies as packages instead of retargeting any project. Conditions live here rather than
+       in Directory.Build.props because TargetFrameworkVersion is set in the project body. -->
+  <ItemGroup Condition=" '$(TargetFrameworkVersion)' == 'v4.6.1' ">
+    <PackageReference Include="Microsoft.NETFramework.ReferenceAssemblies.net461" PrivateAssets="all" IncludeAssets="build" />
+  </ItemGroup>
+
+  <ItemGroup Condition=" '$(TargetFrameworkVersion)' == 'v4.7' ">
+    <PackageReference Include="Microsoft.NETFramework.ReferenceAssemblies.net47" PrivateAssets="all" IncludeAssets="build" />
+  </ItemGroup>
+
+  <ItemGroup Condition=" '$(TargetFrameworkVersion)' == 'v4.7.2' ">
+    <PackageReference Include="Microsoft.NETFramework.ReferenceAssemblies.net472" PrivateAssets="all" IncludeAssets="build" />
+  </ItemGroup>
+
+</Project>

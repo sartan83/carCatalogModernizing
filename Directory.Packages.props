@@ -69,6 +69,13 @@
     <PackageVersion Include="WebGrease" Version="1.6.0" />
   </ItemGroup>
 
+  <!-- Targeting-pack reference assemblies, added per TargetFrameworkVersion in Directory.Build.targets -->
+  <ItemGroup>
+    <PackageVersion Include="Microsoft.NETFramework.ReferenceAssemblies.net461" Version="1.0.3" />
+    <PackageVersion Include="Microsoft.NETFramework.ReferenceAssemblies.net47" Version="1.0.3" />
+    <PackageVersion Include="Microsoft.NETFramework.ReferenceAssemblies.net472" Version="1.0.3" />
+  </ItemGroup>
+
   <!-- Test-only packages -->
   <ItemGroup>
     <PackageVersion Include="Microsoft.NET.Test.Sdk" Version="17.6.3" />

@@ -1,0 +1,12 @@
+{
+  "profiles": {
+    "CarCatalog.RazorPages": {
+      "commandName": "Project",
+      "launchBrowser": true,
+      "applicationUrl": "http://localhost:63404",
+      "environmentVariables": {
+        "ASPNETCORE_ENVIRONMENT": "Development"
+      }
+    }
+  }
+}

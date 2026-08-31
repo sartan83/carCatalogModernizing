@@ -1,0 +1,13 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <RootNamespace>CarCatalog.RazorPages</RootNamespace>
+    <UserSecretsId>carcatalog-razorpages</UserSecretsId>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\CarCatalog.Infrastructure\CarCatalog.Infrastructure.csproj" />
+  </ItemGroup>
+
+</Project>

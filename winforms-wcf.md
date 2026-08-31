@@ -11,4 +11,4 @@ This is a traditional Line of Business WinForms application. The front-end is a 
 
 ## Repository and Project Structure
 
-The solution lives in `eShopLegacyNTier`: WinForms (no High DPI support) interfacing with a local WCF service which talks to a local SQL database. Each component is broken into its own project (frontend, WCF, etc).
+The solution lives in `CarCatalogLegacyNTier`: WinForms (no High DPI support) interfacing with a local WCF service which talks to a local SQL database. Each component is broken into its own project (frontend, WCF, etc).

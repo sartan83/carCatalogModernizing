@@ -3,9 +3,9 @@
 
 This repo contains three sample back-office automotive catalog applications built on .NET Framework:
 
-- **ASP.NET MVC 5** web app — `eShopLegacyMVCSolution/eShopLegacyMVC.sln`
-- **ASP.NET WebForms** web app — `eShopLegacyWebFormsSolution/eShopLegacyWebForms.sln`
-- **N-Tier app** — a WCF service with a WinForms desktop client — `eShopLegacyNTier/eShopLegacyNTier.sln`
+- **ASP.NET MVC 5** web app — `CarCatalogLegacyMVCSolution/CarCatalogLegacyMVC.sln`
+- **ASP.NET WebForms** web app — `CarCatalogLegacyWebFormsSolution/CarCatalogLegacyWebForms.sln`
+- **N-Tier app** — a WCF service with a WinForms desktop client — `CarCatalogLegacyNTier/CarCatalogLegacyNTier.sln`
 
 ## What the apps do
 

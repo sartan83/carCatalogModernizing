@@ -50,8 +50,12 @@
     <PackageVersion Include="popper.js" Version="1.14.3" />
     <PackageVersion Include="Respond" Version="1.4.2" />
     <PackageVersion Include="System.Buffers" Version="4.4.0" />
-    <!-- 4.7.1 / 4.5.2: lower bounds required by Autofac 6.1.0 (via Microsoft.Bcl.AsyncInterfaces). -->
-    <PackageVersion Include="System.Diagnostics.DiagnosticSource" Version="4.7.1" />
+    <!-- The BCL shim packages below stay at the versions the apps shipped with. Autofac 6.1.0
+         asks for higher transitive lower bounds (DiagnosticSource >= 4.7.1, which in turn wants
+         System.Memory >= 4.5.4, ...), but raising them cascades into new assembly versions and
+         binding redirects in the web apps, i.e. a runtime change this phase must not make.
+         The resulting NU1605 downgrade warnings match the pre-conversion behavior. -->
+    <PackageVersion Include="System.Diagnostics.DiagnosticSource" Version="4.5.1" />
     <PackageVersion Include="System.Diagnostics.PerformanceCounter" Version="4.5.0" />
     <PackageVersion Include="System.IO.Compression" Version="4.3.0" />
     <PackageVersion Include="System.IO.Compression.ZipFile" Version="4.3.0" />
@@ -61,7 +65,7 @@
     <PackageVersion Include="System.Numerics.Vectors" Version="4.4.0" />
     <PackageVersion Include="System.Runtime.CompilerServices.Unsafe" Version="4.5.0" />
     <PackageVersion Include="System.Threading.Channels" Version="4.5.0" />
-    <PackageVersion Include="System.Threading.Tasks.Extensions" Version="4.5.2" />
+    <PackageVersion Include="System.Threading.Tasks.Extensions" Version="4.5.1" />
     <PackageVersion Include="WebGrease" Version="1.6.0" />
   </ItemGroup>
 

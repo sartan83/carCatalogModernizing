@@ -5,6 +5,11 @@
     <IsPackable>false</IsPackable>
     <AssemblyName>CarCatalog.CharacterizationTests</AssemblyName>
     <RootNamespace>CarCatalog.CharacterizationTests</RootNamespace>
+    <!-- The referenced legacy apps pin BCL shim packages below the lower bounds Autofac 6.1.0
+         asks for. SDK projects promote those NU1605 downgrades to errors; the legacy projects
+         only warn, so keep the same behavior here instead of bumping their runtime assemblies. -->
+    <NoWarn>$(NoWarn);NU1605</NoWarn>
+    <WarningsNotAsErrors>$(WarningsNotAsErrors);NU1605</WarningsNotAsErrors>
   </PropertyGroup>
 
   <ItemGroup>

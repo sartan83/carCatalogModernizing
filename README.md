@@ -1,59 +1,35 @@
 
-# carCatalogModernizing - Legacy ASP.NET (MVC and WebForms) and N-Tier (WCF + WinForms) automotive catalog apps
+# carCatalogModernizing - Automotive catalog apps on .NET Framework (ASP.NET MVC, WebForms, WCF + WinForms)
 
-This repo provides three sample hypothetical legacy automotive catalog apps built on .NET Framework, in the state they are in **before** any modernization work:
+This repo contains three sample back-office automotive catalog applications built on .NET Framework:
 
-- **ASP.NET MVC** web app (`eShopLegacyMVCSolution`, plus an SDK-style ported variant)
-- **ASP.NET WebForms** web app (`eShopLegacyWebFormsSolution`)
-- **N-Tier app** made of a WCF service and a WinForms desktop client (`eShopLegacyNTier`)
-
-They are the starting point for a Lift and Shift modernization (Windows Containers, Azure Container Instances, Windows Server VMs, AKS, Azure Web App for Containers); none of that has been applied here yet, so the repo contains no Dockerfiles, compose files or cloud manifests.
-
-## Related Guide/eBook
-
-The modernization guidance these samples were built for is available as a free guide/eBook (2nd Edition), and the PDF/EPUB/MOBI copies are in the [`Docs`](./Docs) folder:
-
-<img src="https://github.com/dotnet/docs/raw/master/docs/architecture/modernize-with-azure-containers/media/index/web-application-guide-cover-image.png" width="300">
-
-.PDF download: https://aka.ms/liftandshiftwithcontainersebook
-
-Modernizing with Windows Containers significantly improves the deployments for DevOps, without having to change the app's architecture or C# code.
+- **ASP.NET MVC 5** web app — `eShopLegacyMVCSolution/eShopLegacyMVC.sln` (plus `eShopPorted`, an SDK-style variant of the same app)
+- **ASP.NET WebForms** web app — `eShopLegacyWebFormsSolution/eShopLegacyWebForms.sln`
+- **N-Tier app** — a WCF service with a WinForms desktop client — `eShopLegacyNTier/eShopLegacyNTier.sln`
 
 ## What the apps do
 
-The sample apps are simple back-office apps for a car maker/dealer group (an "Auto Catalog Manager") so employees can update the vehicle catalog: sports cars, GTs, SUVs and spare parts from fictional marques such as Velocari, Toranti, Nordwerk and Aurelia.
-They are therefore simple CRUD applications updating data in a SQL Server database.
+Each app is the internal back-office of a car maker/dealer group (an "Auto Catalog Manager") so employees can update the vehicle catalog: sports cars, GTs, SUVs and spare parts from fictional marques such as Velocari, Toranti, Nordwerk and Aurelia. They are CRUD applications over a SQL Server database.
 
 The catalog domain is modelled with three entities: `CatalogBrand` (the marque), `CatalogType` (the vehicle/part category) and `CatalogItem` (the vehicle or part itself, with price, stock and picture).
 
-### UI and business features
-
-The WebForms and MVC apps are pretty similar in regards to UI and business features. Both versions exist so you can compare, depending on what technology your existing apps use (ASP.NET MVC or Web Forms).
+The MVC and WebForms apps are nearly identical in UI and business features; both exist so the same application can be compared across the two technologies.
 
 ![image](https://user-images.githubusercontent.com/1712635/30354210-0638f3b2-97e0-11e7-82c5-df18197ccdbd.png)
 
 ### WinForms + WCF application
 
-The WinForms application is a catalog/inventory manager that uses a WCF service as its back-end. Read more about the WinForms + WCF sample [here](./winforms-wcf.md).
+The WinForms client is a catalog/inventory app that reads and writes through a WCF service. Read more about it [here](./winforms-wcf.md).
 
 ## Running the apps
 
-Each solution is a .NET Framework solution and builds with Visual Studio (or `msbuild`) on Windows:
+Open a solution in Visual Studio on Windows (or build it with `msbuild`), restore the NuGet packages and run it with IIS Express. For the N-Tier sample, start the WCF service before the WinForms client.
 
-| App | Solution |
-| --- | --- |
-| MVC | `eShopLegacyMVCSolution/eShopLegacyMVC.sln` |
-| WebForms | `eShopLegacyWebFormsSolution/eShopLegacyWebForms.sln` |
-| WCF + WinForms | `eShopLegacyNTier/eShopLegacyNTier.sln` |
+Autofac wires up the dependencies in each app (`Modules/ApplicationModule.cs`), and `CatalogDBContext` (Entity Framework) provides persistence, with Hi-Lo sequences generating the catalog ids.
 
-Open a solution, restore NuGet packages, and run it with IIS Express. For the N-Tier sample, start the WCF service before the WinForms client.
+### Mock-data or a real SQL Server database
 
-### Choose in-memory mock-data or a real SQL Server database
+Every app can either connect to SQL Server or serve an in-memory catalog when no database is available — useful for testing and demos. The choice is per app in its `Web.config`/`App.config`:
 
-The apps can either connect to a real database to get/update the vehicle catalog, or use mock-data when the database is not available and you just need to test/demo the app. The option is configured per application in its `Web.config`/`App.config` (`UseMockData`).
-
-Catalog data comes from `Models/Infrastructure/PreconfiguredData.cs`. Setting `UseCustomizationData` instead loads the catalog from the CSV files (and pictures zip) under each app's `Setup` folder, so brands, types and items can be changed without recompiling.
-
-### Azure preparation scripts
-
-The PowerShell scripts under [`Setup`](./Setup) provision the Azure resources (App Service plan, Web App with a managed identity, Azure SQL server and database) used as the target of a later migration.
+- `UseMockData` — `true` serves the in-memory catalog, `false` uses SQL Server.
+- `UseCustomizationData` — `true` seeds the catalog from the CSV files and pictures zip in the app's `Setup` folder instead of `Models/Infrastructure/PreconfiguredData.cs`, so brands, types and items can be changed without recompiling.

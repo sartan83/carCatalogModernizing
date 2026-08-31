@@ -20,6 +20,7 @@ public static class CatalogServiceHost
         builder.Services.AddServiceModelServices();
         builder.Services.AddServiceModelMetadata();
         builder.Services.AddSingleton<IServiceBehavior, UseRequestHeadersForMetadataAddressBehavior>();
+        builder.Services.AddHealthChecks();
 
         var app = builder.Build();
 
@@ -34,6 +35,8 @@ public static class CatalogServiceHost
             serviceModel.ConfigureServiceHostBase<CatalogWcfService>(host =>
                 host.Description.Behaviors.Find<ServiceMetadataBehavior>().HttpGetEnabled = true);
         });
+
+        app.MapHealthChecks("/health");
 
         if (app.Configuration.GetValue("Catalog:MigrateDatabaseOnStartup", true)
             && !app.Configuration.GetValue("Catalog:UseMockData", false))

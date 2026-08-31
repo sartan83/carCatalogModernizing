@@ -4,6 +4,7 @@ var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddControllersWithViews();
 builder.Services.AddCatalog(builder.Configuration);
+builder.Services.AddHealthChecks();
 
 var app = builder.Build();
 
@@ -16,6 +17,7 @@ app.UseStaticFiles();
 app.UseRouting();
 
 app.MapControllerRoute("default", "{controller=Catalog}/{action=Index}/{id?}");
+app.MapHealthChecks("/health");
 
 if (app.Configuration.GetValue("Catalog:MigrateDatabaseOnStartup", true)
     && !app.Configuration.GetValue("Catalog:UseMockData", false))

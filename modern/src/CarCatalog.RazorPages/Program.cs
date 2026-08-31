@@ -9,6 +9,7 @@ builder.Services.AddRazorPages(options =>
     options.Conventions.AddPageRoute("/Index", "Default/index/{index:int}/size/{size:int}");
 });
 builder.Services.AddCatalog(builder.Configuration);
+builder.Services.AddHealthChecks();
 
 var app = builder.Build();
 
@@ -21,6 +22,7 @@ app.UseStaticFiles();
 app.UseRouting();
 
 app.MapRazorPages();
+app.MapHealthChecks("/health");
 
 if (app.Configuration.GetValue("Catalog:MigrateDatabaseOnStartup", true)
     && !app.Configuration.GetValue("Catalog:UseMockData", false))

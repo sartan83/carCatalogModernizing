@@ -69,3 +69,91 @@ jobs:
           name: test-results
           path: TestResults
           if-no-files-found: ignore
+
+  modern:
+    name: Build and test (.NET 8, Linux)
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: '8.0.x'
+
+      - name: Restore
+        run: dotnet restore modern/CarCatalog.Modern.sln
+
+      - name: Build
+        run: dotnet build modern/CarCatalog.Modern.sln -c Release --no-restore
+
+      - name: Test
+        run: dotnet test modern/CarCatalog.Modern.sln -c Release --no-build --logger trx --results-directory TestResults
+
+      - name: Upload test results
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: modern-test-results
+          path: TestResults
+          if-no-files-found: ignore
+
+  containers:
+    name: Container images and compose smoke test
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Build images
+        run: |
+          docker build -t carcatalog/web:ci -f modern/src/CarCatalog.Web/Dockerfile .
+          docker build -t carcatalog/razorpages:ci -f modern/src/CarCatalog.RazorPages/Dockerfile .
+          docker build -t carcatalog/wcf:ci -f modern/src/CarCatalog.WcfService/Dockerfile .
+
+      - name: Start the stack
+        env:
+          MSSQL_SA_PASSWORD: ${{ format('Ci-{0}-Aa1!', github.run_id) }}
+        run: docker compose up -d --wait --wait-timeout 600
+
+      - name: Smoke test the apps
+        run: |
+          set -euo pipefail
+          for url in http://localhost:8080/ http://localhost:8080/Catalog/Details/1 \
+                     http://localhost:8081/ http://localhost:8081/Catalog/Details/1 \
+                     'http://localhost:8082/CatalogService.svc?wsdl'; do
+            code=$(curl -sS --retry 10 --retry-all-errors --retry-delay 5 -o /dev/null -w '%{http_code}' "$url")
+            echo "$url -> $code"
+            [ "$code" = 200 ]
+          done
+
+      - name: Dump container logs
+        if: failure()
+        env:
+          MSSQL_SA_PASSWORD: ${{ format('Ci-{0}-Aa1!', github.run_id) }}
+        run: docker compose logs
+
+      - name: Stop the stack
+        if: always()
+        env:
+          MSSQL_SA_PASSWORD: ${{ format('Ci-{0}-Aa1!', github.run_id) }}
+        run: docker compose down -v
+
+  manifests:
+    name: Validate Kubernetes manifests
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: azure/setup-kubectl@v4
+        with:
+          version: v1.30.4
+
+      - name: Install kubeconform
+        run: |
+          curl -sSL https://github.com/yannh/kubeconform/releases/download/v0.6.7/kubeconform-linux-amd64.tar.gz \
+            | sudo tar -xz -C /usr/local/bin kubeconform
+
+      - name: Validate
+        run: kubectl kustomize k8s | kubeconform -strict -summary -kubernetes-version 1.30.0 -

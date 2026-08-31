@@ -62,3 +62,14 @@ Every app can either connect to SQL Server or serve an in-memory catalog when no
 
 - `UseMockData` — `true` serves the in-memory catalog, `false` uses SQL Server.
 - `UseCustomizationData` — `true` seeds the catalog from the CSV files and pictures zip in the app's `Setup` folder instead of `Models/Infrastructure/PreconfiguredData.cs`, so brands, types and items can be changed without recompiling.
+
+## Modernization foundation (.NET 8)
+
+`CarCatalog.sln` at the repo root is the .NET 8 base for the modernization work; the three legacy solutions keep running unchanged.
+
+- `src/Catalog.Domain` — unified catalog entities (`CatalogItem`, `CatalogBrand`, `CatalogType`, plus the WCF-only `CatalogItemsStock` and `DiscountItem`).
+- `src/Catalog.Application` — the canonical `ICatalogService`, the union of the web apps' contract and the WCF contract.
+- `src/Catalog.Infrastructure` — EF Core `CatalogDbContext` over the same `Catalog`/`CatalogBrand`/`CatalogType` tables (ids come from identity columns instead of the Hi-Lo generator) and the `CatalogService` implementation.
+- `tests/Catalog.Application.Tests` — xUnit characterization tests of the catalog service against the EF Core in-memory provider.
+
+Package versions are centrally managed in `Directory.Packages.props`. Build and test on any platform with `dotnet build CarCatalog.sln` and `dotnet test CarCatalog.sln`.

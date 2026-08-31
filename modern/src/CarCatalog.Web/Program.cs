@@ -1,4 +1,10 @@
+using System.Globalization;
 using CarCatalog.Infrastructure;
+
+// The legacy Web.config pinned <globalization uiCulture="en-US" culture="en-US" />.
+var culture = new CultureInfo("en-US");
+CultureInfo.DefaultThreadCurrentCulture = culture;
+CultureInfo.DefaultThreadCurrentUICulture = culture;
 
 var builder = WebApplication.CreateBuilder(args);
 

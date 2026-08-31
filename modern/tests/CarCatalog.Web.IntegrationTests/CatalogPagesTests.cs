@@ -121,6 +121,29 @@ public class CatalogPagesTests : IClassFixture<CatalogWebApplicationFactory>
         Assert.Contains("The Name field is required.", await response.Content.ReadAsStringAsync());
     }
 
+    [Theory]
+    [InlineData("/", "Create New", "/Catalog/Create", "btn esh-button esh-button-primary")]
+    [InlineData("/Catalog/Create", "[ Cancel ]", "/", "btn esh-button esh-button-secondary")]
+    [InlineData("/Catalog/Details/1", "Back to List", "/", "esh-link-item")]
+    public async Task NavigationLinks_KeepTheirTargetAndStyling(
+        string page,
+        string text,
+        string href,
+        string cssClass)
+    {
+        var html = await factory.CreateClient().GetStringAsync(page);
+
+        Assert.Contains($"<a class=\"{cssClass}\" href=\"{href}\">{text}</a>", html);
+    }
+
+    [Fact]
+    public async Task Details_FormatsThePriceWithTheLegacyEnUsCulture()
+    {
+        var html = await factory.CreateClient().GetStringAsync("/Catalog/Details/1");
+
+        Assert.Contains("$507,000.00", html);
+    }
+
     private static async Task<AntiForgeryForm> GetAntiForgeryFormAsync(HttpClient client, string url)
     {
         var html = await client.GetStringAsync(url);

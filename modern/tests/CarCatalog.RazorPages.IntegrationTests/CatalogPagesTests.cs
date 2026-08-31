@@ -112,6 +112,18 @@ public class CatalogPagesTests(CatalogPagesApplicationFactory factory) : IClassF
         Assert.Equal(HttpStatusCode.NotFound, (await client.GetAsync("/Catalog/Details/1")).StatusCode);
     }
 
+    [Theory]
+    [InlineData("/Catalog/Create", "[ Cancel ]")]
+    [InlineData("/Catalog/Edit/1", "[ Cancel ]")]
+    [InlineData("/Catalog/Delete/1", "[ Cancel ]")]
+    [InlineData("/Catalog/Details/1", "Back to list")]
+    public async Task NavigationLinks_PointBackToTheCatalog(string page, string text)
+    {
+        var html = await factory.CreateClient().GetStringAsync(page);
+
+        Assert.Matches($"<a href=\"/\" class=\"[^\"]+\">{Regex.Escape(text)}</a>", html);
+    }
+
     private static async Task<Dictionary<string, string>> GetAntiForgeryFieldsAsync(HttpClient client, string url)
     {
         var html = await client.GetStringAsync(url);

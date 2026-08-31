@@ -1,0 +1,106 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.31903.59
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{5D731D52-3F6A-468E-8E75-43B6F87A64E9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CarCatalog.Domain", "src\CarCatalog.Domain\CarCatalog.Domain.csproj", "{55DB82D8-9347-4AC7-A9C4-054C1D7D7F84}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CarCatalog.Application", "src\CarCatalog.Application\CarCatalog.Application.csproj", "{9323B9EB-0C08-46CE-9E29-13D850A85E18}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CarCatalog.Infrastructure", "src\CarCatalog.Infrastructure\CarCatalog.Infrastructure.csproj", "{262377EE-B212-46E1-8BFE-63B6E9D49B74}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{CE4D43B3-56A9-48C4-A58D-0C79960C689E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CarCatalog.UnitTests", "tests\CarCatalog.UnitTests\CarCatalog.UnitTests.csproj", "{D94B7FB6-47E5-476B-9972-66A729462B9D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CarCatalog.Web", "src\CarCatalog.Web\CarCatalog.Web.csproj", "{01B31F01-61B9-40B5-BB4A-C5866D2B271F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CarCatalog.Web.IntegrationTests", "tests\CarCatalog.Web.IntegrationTests\CarCatalog.Web.IntegrationTests.csproj", "{6276D518-A6CF-41EC-8AFD-F24294A1978A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CarCatalog.ServiceContracts", "src\CarCatalog.ServiceContracts\CarCatalog.ServiceContracts.csproj", "{88B07208-1CDD-48E7-A608-443EA8B12A1F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CarCatalog.WcfService", "src\CarCatalog.WcfService\CarCatalog.WcfService.csproj", "{9113A1FC-18DF-44DA-BCE6-825A5100BCDA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CarCatalog.WinForms", "src\CarCatalog.WinForms\CarCatalog.WinForms.csproj", "{D6F79D47-0613-433F-B146-F5403433C6D4}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CarCatalog.WcfService.IntegrationTests", "tests\CarCatalog.WcfService.IntegrationTests\CarCatalog.WcfService.IntegrationTests.csproj", "{1E860A7C-41AA-4330-BE39-45E93323AD3B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CarCatalog.RazorPages", "src\CarCatalog.RazorPages\CarCatalog.RazorPages.csproj", "{3DC8CDC2-3F51-4956-8A88-604E8F45A4A1}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CarCatalog.RazorPages.IntegrationTests", "tests\CarCatalog.RazorPages.IntegrationTests\CarCatalog.RazorPages.IntegrationTests.csproj", "{D8B918A5-A7F6-4EAC-B2C0-977DE7B3EB86}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{55DB82D8-9347-4AC7-A9C4-054C1D7D7F84}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{55DB82D8-9347-4AC7-A9C4-054C1D7D7F84}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{55DB82D8-9347-4AC7-A9C4-054C1D7D7F84}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{55DB82D8-9347-4AC7-A9C4-054C1D7D7F84}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9323B9EB-0C08-46CE-9E29-13D850A85E18}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9323B9EB-0C08-46CE-9E29-13D850A85E18}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9323B9EB-0C08-46CE-9E29-13D850A85E18}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9323B9EB-0C08-46CE-9E29-13D850A85E18}.Release|Any CPU.Build.0 = Release|Any CPU
+		{262377EE-B212-46E1-8BFE-63B6E9D49B74}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{262377EE-B212-46E1-8BFE-63B6E9D49B74}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{262377EE-B212-46E1-8BFE-63B6E9D49B74}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{262377EE-B212-46E1-8BFE-63B6E9D49B74}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D94B7FB6-47E5-476B-9972-66A729462B9D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D94B7FB6-47E5-476B-9972-66A729462B9D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D94B7FB6-47E5-476B-9972-66A729462B9D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D94B7FB6-47E5-476B-9972-66A729462B9D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{01B31F01-61B9-40B5-BB4A-C5866D2B271F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{01B31F01-61B9-40B5-BB4A-C5866D2B271F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{01B31F01-61B9-40B5-BB4A-C5866D2B271F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{01B31F01-61B9-40B5-BB4A-C5866D2B271F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6276D518-A6CF-41EC-8AFD-F24294A1978A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6276D518-A6CF-41EC-8AFD-F24294A1978A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6276D518-A6CF-41EC-8AFD-F24294A1978A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6276D518-A6CF-41EC-8AFD-F24294A1978A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{88B07208-1CDD-48E7-A608-443EA8B12A1F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{88B07208-1CDD-48E7-A608-443EA8B12A1F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{88B07208-1CDD-48E7-A608-443EA8B12A1F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{88B07208-1CDD-48E7-A608-443EA8B12A1F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9113A1FC-18DF-44DA-BCE6-825A5100BCDA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9113A1FC-18DF-44DA-BCE6-825A5100BCDA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9113A1FC-18DF-44DA-BCE6-825A5100BCDA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9113A1FC-18DF-44DA-BCE6-825A5100BCDA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D6F79D47-0613-433F-B146-F5403433C6D4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D6F79D47-0613-433F-B146-F5403433C6D4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D6F79D47-0613-433F-B146-F5403433C6D4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D6F79D47-0613-433F-B146-F5403433C6D4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1E860A7C-41AA-4330-BE39-45E93323AD3B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1E860A7C-41AA-4330-BE39-45E93323AD3B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1E860A7C-41AA-4330-BE39-45E93323AD3B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1E860A7C-41AA-4330-BE39-45E93323AD3B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3DC8CDC2-3F51-4956-8A88-604E8F45A4A1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3DC8CDC2-3F51-4956-8A88-604E8F45A4A1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3DC8CDC2-3F51-4956-8A88-604E8F45A4A1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3DC8CDC2-3F51-4956-8A88-604E8F45A4A1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D8B918A5-A7F6-4EAC-B2C0-977DE7B3EB86}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D8B918A5-A7F6-4EAC-B2C0-977DE7B3EB86}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D8B918A5-A7F6-4EAC-B2C0-977DE7B3EB86}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D8B918A5-A7F6-4EAC-B2C0-977DE7B3EB86}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{55DB82D8-9347-4AC7-A9C4-054C1D7D7F84} = {5D731D52-3F6A-468E-8E75-43B6F87A64E9}
+		{9323B9EB-0C08-46CE-9E29-13D850A85E18} = {5D731D52-3F6A-468E-8E75-43B6F87A64E9}
+		{262377EE-B212-46E1-8BFE-63B6E9D49B74} = {5D731D52-3F6A-468E-8E75-43B6F87A64E9}
+		{D94B7FB6-47E5-476B-9972-66A729462B9D} = {CE4D43B3-56A9-48C4-A58D-0C79960C689E}
+		{01B31F01-61B9-40B5-BB4A-C5866D2B271F} = {5D731D52-3F6A-468E-8E75-43B6F87A64E9}
+		{6276D518-A6CF-41EC-8AFD-F24294A1978A} = {CE4D43B3-56A9-48C4-A58D-0C79960C689E}
+		{88B07208-1CDD-48E7-A608-443EA8B12A1F} = {5D731D52-3F6A-468E-8E75-43B6F87A64E9}
+		{9113A1FC-18DF-44DA-BCE6-825A5100BCDA} = {5D731D52-3F6A-468E-8E75-43B6F87A64E9}
+		{D6F79D47-0613-433F-B146-F5403433C6D4} = {5D731D52-3F6A-468E-8E75-43B6F87A64E9}
+		{1E860A7C-41AA-4330-BE39-45E93323AD3B} = {CE4D43B3-56A9-48C4-A58D-0C79960C689E}
+		{3DC8CDC2-3F51-4956-8A88-604E8F45A4A1} = {5D731D52-3F6A-468E-8E75-43B6F87A64E9}
+		{D8B918A5-A7F6-4EAC-B2C0-977DE7B3EB86} = {CE4D43B3-56A9-48C4-A58D-0C79960C689E}
+	EndGlobalSection
+EndGlobal

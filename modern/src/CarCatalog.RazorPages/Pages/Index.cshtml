@@ -1,0 +1,83 @@
+@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="esh-table">
+    <p class="esh-link-wrapper">
+        <a asp-page="/Catalog/Create" class="btn esh-button esh-button-primary">Create New</a>
+    </p>
+
+    <table class="table">
+        <thead>
+            <tr class="esh-table-header">
+                <th></th>
+                <th>Name</th>
+                <th>Description</th>
+                <th>Brand</th>
+                <th>Type</th>
+                <th>Price</th>
+                <th>Picture name</th>
+                <th>Stock</th>
+                <th>Restock</th>
+                <th>Max stock</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @if (!Model.Catalog.Data.Any())
+            {
+                <tr>
+                    <td>No data was returned.</td>
+                </tr>
+            }
+            @foreach (var item in Model.Catalog.Data)
+            {
+                <tr>
+                    <td><img class="esh-thumbnail" src="~/Pics/@item.PictureFileName" /></td>
+                    <td><p>@item.Name</p></td>
+                    <td><p>@item.Description</p></td>
+                    <td><p>@item.CatalogBrand!.Brand</p></td>
+                    <td><p>@item.CatalogType!.Type</p></td>
+                    <td><p><span class="esh-price">@item.Price</span></p></td>
+                    <td><p>@item.PictureFileName</p></td>
+                    <td><p>@item.AvailableStock</p></td>
+                    <td><p>@item.RestockThreshold</p></td>
+                    <td><p>@item.MaxStockThreshold</p></td>
+                    <td>
+                        <a asp-page="/Catalog/Edit" asp-route-id="@item.Id" class="esh-table-link">Edit</a> |
+                        <a asp-page="/Catalog/Details" asp-route-id="@item.Id" class="esh-table-link">Details</a> |
+                        <a asp-page="/Catalog/Delete" asp-route-id="@item.Id" class="esh-table-link">Delete</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
+
+<div class="esh-pager">
+    <div class="container">
+        <article class="esh-pager-wrapper row">
+            <nav>
+                <a asp-page="/Index"
+                   asp-route-index="@(Model.Catalog.ActualPage - 1)"
+                   asp-route-size="@Model.Catalog.ItemsPerPage"
+                   class="esh-pager-item esh-pager-item--navigable@(Model.Catalog.ActualPage > 0 ? "" : " esh-pager-item--hidden")">
+                    Previous
+                </a>
+
+                <span class="esh-pager-item">
+                    Showing @Model.Catalog.ItemsPerPage of @Model.Catalog.TotalItems products - Page @(Model.Catalog.ActualPage + 1) - @Model.Catalog.TotalPages
+                </span>
+
+                <a asp-page="/Index"
+                   asp-route-index="@(Model.Catalog.ActualPage + 1)"
+                   asp-route-size="@Model.Catalog.ItemsPerPage"
+                   class="esh-pager-item esh-pager-item--navigable@(Model.Catalog.ActualPage < Model.Catalog.TotalPages - 1 ? "" : " esh-pager-item--hidden")">
+                    Next
+                </a>
+            </nav>
+        </article>
+    </div>
+</div>

@@ -1,0 +1,70 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: web
+  namespace: car-catalog
+spec:
+  selector:
+    app: web
+  ports:
+    - name: http
+      port: 80
+      targetPort: http
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: web
+  namespace: car-catalog
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: web
+  template:
+    metadata:
+      labels:
+        app: web
+    spec:
+      initContainers:
+        - name: wait-for-sql
+          image: busybox:1.36
+          command:
+            - sh
+            - -c
+            - until nc -z sql 1433; do echo waiting for sql; sleep 3; done
+      containers:
+        - name: web
+          image: carcatalog/web:dev
+          ports:
+            - name: http
+              containerPort: 8080
+          env:
+            # The MVC app owns migrating and seeding the database the three apps share.
+            - name: Catalog__MigrateDatabaseOnStartup
+              value: "true"
+            - name: ConnectionStrings__Catalog
+              valueFrom:
+                secretKeyRef:
+                  name: catalog-sql
+                  key: connection-string
+          readinessProbe:
+            httpGet:
+              path: /health
+              port: http
+            initialDelaySeconds: 10
+            periodSeconds: 10
+            failureThreshold: 30
+          livenessProbe:
+            httpGet:
+              path: /health
+              port: http
+            initialDelaySeconds: 60
+            periodSeconds: 20
+            failureThreshold: 6
+          resources:
+            requests:
+              cpu: 50m
+              memory: 128Mi
+            limits:
+              memory: 512Mi

@@ -1,0 +1,40 @@
+using System.Globalization;
+using CarCatalog.Infrastructure;
+
+// The legacy Web.config pinned <globalization uiCulture="en-US" culture="en-US" />.
+var culture = new CultureInfo("en-US");
+CultureInfo.DefaultThreadCurrentCulture = culture;
+CultureInfo.DefaultThreadCurrentUICulture = culture;
+
+var builder = WebApplication.CreateBuilder(args);
+
+builder.Services.AddControllersWithViews();
+builder.Services.AddCatalog(builder.Configuration);
+builder.Services.AddCatalogHealthChecks(builder.Configuration);
+
+var app = builder.Build();
+
+if (!app.Environment.IsDevelopment())
+{
+    app.UseExceptionHandler("/Catalog/Error");
+}
+
+app.UseStaticFiles();
+app.UseRouting();
+
+app.MapControllerRoute("default", "{controller=Catalog}/{action=Index}/{id?}");
+app.MapHealthChecks("/health");
+
+if (app.Configuration.GetValue("Catalog:MigrateDatabaseOnStartup", true)
+    && !app.Configuration.GetValue("Catalog:UseMockData", false))
+{
+    using var scope = app.Services.CreateScope();
+    scope.ServiceProvider.GetRequiredService<CatalogDbInitializer>().Initialize();
+}
+
+app.Run();
+
+/// <summary>
+/// Named entry point so the integration tests can host the app with WebApplicationFactory.
+/// </summary>
+public partial class Program;

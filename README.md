@@ -15,7 +15,36 @@ The catalog domain is modelled with three entities: `CatalogBrand` (the marque),
 
 The MVC and WebForms apps are nearly identical in UI and business features; both exist so the same application can be compared across the two technologies.
 
-![image](https://user-images.githubusercontent.com/1712635/30354210-0638f3b2-97e0-11e7-82c5-df18197ccdbd.png)
+## Architecture
+
+```mermaid
+graph TD
+    subgraph "Client Layer"
+        MVC["Auto Catalog Manager (MVC web app)"]
+        WF["Auto Catalog Manager (WebForms web app)"]
+        WinF["Auto Catalog Manager (WinForms desktop client)"]
+    end
+
+    subgraph "Service Layer"
+        WCF["Auto Catalog WCF service"]
+    end
+
+    subgraph "Data Access & Domain"
+        EF["CatalogDBContext (Entity Framework 6)"]
+        MOCK["In-memory catalog (mock mode)"]
+        DB[("SQL Server / LocalDB")]
+    end
+
+    MVC --> EF
+    WF --> EF
+    WinF --> WCF
+    WCF --> EF
+    EF --> DB
+    MVC -.-> MOCK
+    WF -.-> MOCK
+```
+
+The three clients are independent applications over the same catalog domain: the two web apps talk to the database directly, while the desktop client goes through the WCF service.
 
 ### WinForms + WCF application
 

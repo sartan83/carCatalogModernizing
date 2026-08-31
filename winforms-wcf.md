@@ -5,7 +5,7 @@
 ![WinForms](assets/winForms.PNG)
 
 ## Introduction
-This sample project shows how to modernize a traditional Line of Business WinForms applications. The WinForms front-end is a fictional inventory app which allows it's users to track inventory for a variety of items being sold through their store. You can look at inventory counts for particular items at different calendar dates. 
+This sample project shows how to modernize a traditional Line of Business WinForms applications. The WinForms front-end is a fictional inventory app which allows it's users to track inventory for the cars and spare parts being sold through their dealership. You can look at inventory counts for particular items at different calendar dates. 
 
 The project showcases the following features:
 - Containerizing a WCF Service and consuming it from a WinForms App

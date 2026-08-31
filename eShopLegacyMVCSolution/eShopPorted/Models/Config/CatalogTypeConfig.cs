@@ -19,10 +19,10 @@ namespace eShopPorted.Models.Config
                 .HasMaxLength(100);
 
             builder.HasData(
-                new CatalogType { Id = 1, Type = "Mug" },
-                new CatalogType { Id = 2, Type = "T-Shirt" },
-                new CatalogType { Id = 3, Type = "Sheet" },
-                new CatalogType { Id = 4, Type = "USB Memory Stick" }
+                new CatalogType { Id = 1, Type = "Sports Car" },
+                new CatalogType { Id = 2, Type = "GT" },
+                new CatalogType { Id = 3, Type = "SUV" },
+                new CatalogType { Id = 4, Type = "Spare Part" }
             );
         }
     }

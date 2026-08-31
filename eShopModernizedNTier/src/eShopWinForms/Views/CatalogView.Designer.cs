@@ -334,7 +334,7 @@
             this.groupBox1.Size = new System.Drawing.Size(319, 190);
             this.groupBox1.TabIndex = 9;
             this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Select a product below and click \"Search\" to find the stock availability on a cer" +
+            this.groupBox1.Text = "Select a vehicle below and click \"Search\" to find the stock availability on a cer" +
     "tain day.";
             // 
             // listBox1
@@ -542,7 +542,7 @@
             this.MaximizeBox = false;
             this.MaximumSize = new System.Drawing.Size(900, 900);
             this.Name = "CatalogView";
-            this.Text = "eShop WinForms";
+            this.Text = "Ferrari Catalog Manager (WinForms)";
             this.tabControl.ResumeLayout(false);
             this.MainCatalog.ResumeLayout(false);
             this.tableLayoutPanel2.ResumeLayout(false);

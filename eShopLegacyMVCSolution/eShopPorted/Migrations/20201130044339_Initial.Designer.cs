@@ -38,22 +38,22 @@ namespace eShopPorted.Migrations
                         new
                         {
                             Id = 1,
-                            Brand = "Azure"
+                            Brand = "Ferrari"
                         },
                         new
                         {
                             Id = 2,
-                            Brand = ".NET"
+                            Brand = "Lamborghini"
                         },
                         new
                         {
                             Id = 3,
-                            Brand = "Visual Studio"
+                            Brand = "Porsche"
                         },
                         new
                         {
                             Id = 4,
-                            Brand = "SQL Server"
+                            Brand = "Maserati"
                         },
                         new
                         {
@@ -104,70 +104,70 @@ namespace eShopPorted.Migrations
                         {
                             Id = 1,
                             AvailableStock = 100,
-                            CatalogBrandId = 2,
-                            CatalogTypeId = 2,
-                            Description = ".NET Bot Black Hoodie",
+                            CatalogBrandId = 1,
+                            CatalogTypeId = 1,
+                            Description = "Ferrari SF90 Stradale plug-in hybrid supercar with 1000 cv",
                             MaxStockThreshold = 0,
-                            Name = ".NET Bot Black Hoodie",
+                            Name = "Ferrari SF90 Stradale",
                             OnReorder = false,
                             PictureFileName = "1.png",
-                            Price = 19.5m,
+                            Price = 507000m,
                             RestockThreshold = 0
                         },
                         new
                         {
                             Id = 2,
                             AvailableStock = 100,
-                            CatalogBrandId = 2,
+                            CatalogBrandId = 1,
                             CatalogTypeId = 1,
-                            Description = ".NET Black & White Mug",
+                            Description = "Ferrari 296 GTB with 663 cv V6 hybrid powertrain",
                             MaxStockThreshold = 0,
-                            Name = ".NET Black & White Mug",
+                            Name = "Ferrari 296 GTB",
                             OnReorder = false,
                             PictureFileName = "2.png",
-                            Price = 8.50m,
+                            Price = 320000m,
                             RestockThreshold = 0
                         },
                         new
                         {
                             Id = 3,
                             AvailableStock = 100,
-                            CatalogBrandId = 5,
+                            CatalogBrandId = 1,
                             CatalogTypeId = 2,
-                            Description = "Prism White T-Shirt",
+                            Description = "Ferrari Roma front-engined V8 grand tourer",
                             MaxStockThreshold = 0,
-                            Name = "Prism White T-Shirt",
+                            Name = "Ferrari Roma",
                             OnReorder = false,
                             PictureFileName = "3.png",
-                            Price = 12m,
+                            Price = 222000m,
                             RestockThreshold = 0
                         },
                         new
                         {
                             Id = 4,
                             AvailableStock = 100,
-                            CatalogBrandId = 2,
-                            CatalogTypeId = 2,
-                            Description = ".NET Foundation T-shirt",
+                            CatalogBrandId = 1,
+                            CatalogTypeId = 3,
+                            Description = "Ferrari Purosangue four-door four-seater V12",
                             MaxStockThreshold = 0,
-                            Name = ".NET Foundation T-shirt",
+                            Name = "Ferrari Purosangue",
                             OnReorder = false,
                             PictureFileName = "4.png",
-                            Price = 12m,
+                            Price = 390000m,
                             RestockThreshold = 0
                         },
                         new
                         {
                             Id = 5,
                             AvailableStock = 100,
-                            CatalogBrandId = 5,
-                            CatalogTypeId = 3,
-                            Description = "Roslyn Red Sheet",
+                            CatalogBrandId = 2,
+                            CatalogTypeId = 1,
+                            Description = "Lamborghini Revuelto V12 hybrid flagship",
                             MaxStockThreshold = 0,
-                            Name = "Roslyn Red Sheet",
+                            Name = "Lamborghini Revuelto",
                             OnReorder = false,
                             PictureFileName = "5.png",
-                            Price = 8.5m,
+                            Price = 517000m,
                             RestockThreshold = 0
                         },
                         new
@@ -175,83 +175,83 @@ namespace eShopPorted.Migrations
                             Id = 6,
                             AvailableStock = 100,
                             CatalogBrandId = 2,
-                            CatalogTypeId = 2,
-                            Description = ".NET Blue Hoodie",
+                            CatalogTypeId = 3,
+                            Description = "Lamborghini Urus Performante super SUV",
                             MaxStockThreshold = 0,
-                            Name = ".NET Blue Hoodie",
+                            Name = "Lamborghini Urus Performante",
                             OnReorder = false,
                             PictureFileName = "6.png",
-                            Price = 12m,
+                            Price = 260000m,
                             RestockThreshold = 0
                         },
                         new
                         {
                             Id = 7,
                             AvailableStock = 100,
-                            CatalogBrandId = 5,
-                            CatalogTypeId = 2,
-                            Description = "Roslyn Red T-Shirt",
+                            CatalogBrandId = 3,
+                            CatalogTypeId = 1,
+                            Description = "Porsche 911 GT3 RS track-focused flat-six",
                             MaxStockThreshold = 0,
-                            Name = "Roslyn Red T-Shirt",
+                            Name = "Porsche 911 GT3 RS",
                             OnReorder = false,
                             PictureFileName = "7.png",
-                            Price = 12m,
+                            Price = 241000m,
                             RestockThreshold = 0
                         },
                         new
                         {
                             Id = 8,
                             AvailableStock = 100,
-                            CatalogBrandId = 5,
-                            CatalogTypeId = 2,
-                            Description = "Kudu Purple Hoodie",
+                            CatalogBrandId = 3,
+                            CatalogTypeId = 3,
+                            Description = "Porsche Cayenne Turbo GT performance SUV",
                             MaxStockThreshold = 0,
-                            Name = "Kudu Purple Hoodie",
+                            Name = "Porsche Cayenne Turbo GT",
                             OnReorder = false,
                             PictureFileName = "8.png",
-                            Price = 8.5m,
+                            Price = 198000m,
                             RestockThreshold = 0
                         },
                         new
                         {
                             Id = 9,
                             AvailableStock = 100,
-                            CatalogBrandId = 5,
+                            CatalogBrandId = 4,
                             CatalogTypeId = 1,
-                            Description = "Cup<T> White Mug",
+                            Description = "Maserati MC20 with Nettuno twin-turbo V6",
                             MaxStockThreshold = 0,
-                            Name = "Cup<T> White Mug",
+                            Name = "Maserati MC20",
                             OnReorder = false,
                             PictureFileName = "9.png",
-                            Price = 12m,
+                            Price = 240000m,
                             RestockThreshold = 0
                         },
                         new
                         {
                             Id = 10,
                             AvailableStock = 100,
-                            CatalogBrandId = 2,
-                            CatalogTypeId = 3,
-                            Description = ".NET Foundation Sheet",
+                            CatalogBrandId = 4,
+                            CatalogTypeId = 2,
+                            Description = "Maserati GranTurismo Trofeo V6 grand tourer",
                             MaxStockThreshold = 0,
-                            Name = ".NET Foundation Sheet",
+                            Name = "Maserati GranTurismo Trofeo",
                             OnReorder = false,
                             PictureFileName = "10.png",
-                            Price = 12m,
+                            Price = 175000m,
                             RestockThreshold = 0
                         },
                         new
                         {
                             Id = 11,
                             AvailableStock = 100,
-                            CatalogBrandId = 2,
-                            CatalogTypeId = 3,
-                            Description = "Cup<T> Sheet",
+                            CatalogBrandId = 5,
+                            CatalogTypeId = 4,
+                            Description = "Carbon ceramic brake kit for track use",
                             MaxStockThreshold = 0,
-                            Name = "Cup<T> Sheet",
+                            Name = "Carbon Ceramic Brake Kit",
                             OnReorder = false,
                             PictureFileName = "11.png",
-                            Price = 8.5m,
+                            Price = 12500m,
                             RestockThreshold = 0
                         },
                         new
@@ -259,13 +259,13 @@ namespace eShopPorted.Migrations
                             Id = 12,
                             AvailableStock = 100,
                             CatalogBrandId = 5,
-                            CatalogTypeId = 2,
-                            Description = "Prism White TShirt",
+                            CatalogTypeId = 4,
+                            Description = "Forged alloy wheel set 20/21 inch staggered",
                             MaxStockThreshold = 0,
-                            Name = "Prism White TShirt",
+                            Name = "Forged Alloy Wheel Set",
                             OnReorder = false,
                             PictureFileName = "12.png",
-                            Price = 12m,
+                            Price = 8900m,
                             RestockThreshold = 0
                         });
                 });
@@ -288,22 +288,22 @@ namespace eShopPorted.Migrations
                         new
                         {
                             Id = 1,
-                            Type = "Mug"
+                            Type = "Sports Car"
                         },
                         new
                         {
                             Id = 2,
-                            Type = "T-Shirt"
+                            Type = "GT"
                         },
                         new
                         {
                             Id = 3,
-                            Type = "Sheet"
+                            Type = "SUV"
                         },
                         new
                         {
                             Id = 4,
-                            Type = "USB Memory Stick"
+                            Type = "Spare Part"
                         });
                 });
 

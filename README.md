@@ -1,7 +1,7 @@
 
 # eShopModernizing - Modernizing ASP.NET Web apps (MVC and WebForms) and N-Tier apps (WCF + WinForms) with Windows Containers and Azure
 
-This repo provides three sample hypothetical legacy eShop web apps (traditional ASP.NET WebForms and MVC in .NET Framework and an N-Tier app based on a WCF service and a client WinForms desktop app) and how you can modernize them (Lift and Shift scenario) with Windows Containers and Azure Cloud into the following deployment options:
+This repo provides three sample hypothetical legacy automotive catalog web apps (traditional ASP.NET WebForms and MVC in .NET Framework and an N-Tier app based on a WCF service and a client WinForms desktop app) and how you can modernize them (Lift and Shift scenario) with Windows Containers and Azure Cloud into the following deployment options:
 
 - Local build and deployment in dev PC with Visual Studio and Docker for Windows
 - Azure Container Instances (ACI)
@@ -20,8 +20,10 @@ You can download its related guidance with this free guide/eBook (2nd Edition):
 
 The modernization with Windows Containers significantly improves the deployments for DevOps, without having to change the app's architecture or C# code.
 
-The sample apps are simple web apps for the internal backoffice of an eShop so employees can update the Product Catalog. 
+The sample apps are simple web apps for the internal backoffice of a car maker/dealer group (a "Ferrari Catalog Manager") so employees can update the vehicle catalog: sports cars, GTs, SUVs and spare parts from marques such as Ferrari, Lamborghini, Porsche and Maserati.
 Both apps are therefore simple CRUD web application to update data into a SQL Server database. 
+
+The catalog domain is modelled with three entities: `CatalogBrand` (the marque), `CatalogType` (the vehicle/part category) and `CatalogItem` (the vehicle or part itself, with price, stock and picture).
 
 See a screenshots of both apps below.
 
@@ -111,7 +113,7 @@ Wiki: https://github.com/dotnet-architecture/eShopModernizing/wiki
 
 ### Choose in-memory mock-data or real database connection to a SQL Server database
 
-The MVC and WebForms web apps allow either to connect to the real database to get/update the product catalog or to use mock-data if, due to any reason, the database is still not available and you need to test/demo the app. 
+The MVC and WebForms web apps allow either to connect to the real database to get/update the vehicle catalog or to use mock-data if, due to any reason, the database is still not available and you need to test/demo the app. 
 
 For each application, the option to select one or the other mode can be configured in the docker-compose.override.yml file when using Windows Containers or at the `Web.config` file when you still are NOT using Containers (original versions).
 

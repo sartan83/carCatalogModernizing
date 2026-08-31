@@ -72,10 +72,10 @@ namespace eShopPorted.Migrations
                 columns: new[] { "Id", "Brand" },
                 values: new object[,]
                 {
-                    { 1, "Azure" },
-                    { 2, ".NET" },
-                    { 3, "Visual Studio" },
-                    { 4, "SQL Server" },
+                    { 1, "Ferrari" },
+                    { 2, "Lamborghini" },
+                    { 3, "Porsche" },
+                    { 4, "Maserati" },
                     { 5, "Other" }
                 });
 
@@ -84,10 +84,10 @@ namespace eShopPorted.Migrations
                 columns: new[] { "Id", "Type" },
                 values: new object[,]
                 {
-                    { 1, "Mug" },
-                    { 2, "T-Shirt" },
-                    { 3, "Sheet" },
-                    { 4, "USB Memory Stick" }
+                    { 1, "Sports Car" },
+                    { 2, "GT" },
+                    { 3, "SUV" },
+                    { 4, "Spare Part" }
                 });
 
             migrationBuilder.InsertData(
@@ -95,18 +95,18 @@ namespace eShopPorted.Migrations
                 columns: new[] { "Id", "AvailableStock", "CatalogBrandId", "CatalogTypeId", "Description", "MaxStockThreshold", "Name", "OnReorder", "PictureFileName", "Price", "RestockThreshold" },
                 values: new object[,]
                 {
-                    { 2, 100, 2, 1, ".NET Black & White Mug", 0, ".NET Black & White Mug", false, "2.png", 8.50m, 0 },
-                    { 9, 100, 5, 1, "Cup<T> White Mug", 0, "Cup<T> White Mug", false, "9.png", 12m, 0 },
-                    { 1, 100, 2, 2, ".NET Bot Black Hoodie", 0, ".NET Bot Black Hoodie", false, "1.png", 19.5m, 0 },
-                    { 3, 100, 5, 2, "Prism White T-Shirt", 0, "Prism White T-Shirt", false, "3.png", 12m, 0 },
-                    { 4, 100, 2, 2, ".NET Foundation T-shirt", 0, ".NET Foundation T-shirt", false, "4.png", 12m, 0 },
-                    { 6, 100, 2, 2, ".NET Blue Hoodie", 0, ".NET Blue Hoodie", false, "6.png", 12m, 0 },
-                    { 7, 100, 5, 2, "Roslyn Red T-Shirt", 0, "Roslyn Red T-Shirt", false, "7.png", 12m, 0 },
-                    { 8, 100, 5, 2, "Kudu Purple Hoodie", 0, "Kudu Purple Hoodie", false, "8.png", 8.5m, 0 },
-                    { 12, 100, 5, 2, "Prism White TShirt", 0, "Prism White TShirt", false, "12.png", 12m, 0 },
-                    { 5, 100, 5, 3, "Roslyn Red Sheet", 0, "Roslyn Red Sheet", false, "5.png", 8.5m, 0 },
-                    { 10, 100, 2, 3, ".NET Foundation Sheet", 0, ".NET Foundation Sheet", false, "10.png", 12m, 0 },
-                    { 11, 100, 2, 3, "Cup<T> Sheet", 0, "Cup<T> Sheet", false, "11.png", 8.5m, 0 }
+                    { 2, 100, 1, 1, "Ferrari 296 GTB with 663 cv V6 hybrid powertrain", 0, "Ferrari 296 GTB", false, "2.png", 320000m, 0 },
+                    { 9, 100, 4, 1, "Maserati MC20 with Nettuno twin-turbo V6", 0, "Maserati MC20", false, "9.png", 240000m, 0 },
+                    { 1, 100, 1, 1, "Ferrari SF90 Stradale plug-in hybrid supercar with 1000 cv", 0, "Ferrari SF90 Stradale", false, "1.png", 507000m, 0 },
+                    { 3, 100, 1, 2, "Ferrari Roma front-engined V8 grand tourer", 0, "Ferrari Roma", false, "3.png", 222000m, 0 },
+                    { 4, 100, 1, 3, "Ferrari Purosangue four-door four-seater V12", 0, "Ferrari Purosangue", false, "4.png", 390000m, 0 },
+                    { 6, 100, 2, 3, "Lamborghini Urus Performante super SUV", 0, "Lamborghini Urus Performante", false, "6.png", 260000m, 0 },
+                    { 7, 100, 3, 1, "Porsche 911 GT3 RS track-focused flat-six", 0, "Porsche 911 GT3 RS", false, "7.png", 241000m, 0 },
+                    { 8, 100, 3, 3, "Porsche Cayenne Turbo GT performance SUV", 0, "Porsche Cayenne Turbo GT", false, "8.png", 198000m, 0 },
+                    { 12, 100, 5, 4, "Forged alloy wheel set 20/21 inch staggered", 0, "Forged Alloy Wheel Set", false, "12.png", 8900m, 0 },
+                    { 5, 100, 2, 1, "Lamborghini Revuelto V12 hybrid flagship", 0, "Lamborghini Revuelto", false, "5.png", 517000m, 0 },
+                    { 10, 100, 4, 2, "Maserati GranTurismo Trofeo V6 grand tourer", 0, "Maserati GranTurismo Trofeo", false, "10.png", 175000m, 0 },
+                    { 11, 100, 5, 4, "Carbon ceramic brake kit for track use", 0, "Carbon Ceramic Brake Kit", false, "11.png", 12500m, 0 }
                 });
 
             migrationBuilder.CreateIndex(

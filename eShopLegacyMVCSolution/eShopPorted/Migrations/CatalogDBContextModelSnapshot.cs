@@ -36,22 +36,22 @@ namespace eShopPorted.Migrations
                         new
                         {
                             Id = 1,
-                            Brand = "Azure"
+                            Brand = "Velocari"
                         },
                         new
                         {
                             Id = 2,
-                            Brand = ".NET"
+                            Brand = "Toranti"
                         },
                         new
                         {
                             Id = 3,
-                            Brand = "Visual Studio"
+                            Brand = "Nordwerk"
                         },
                         new
                         {
                             Id = 4,
-                            Brand = "SQL Server"
+                            Brand = "Aurelia"
                         },
                         new
                         {
@@ -102,70 +102,70 @@ namespace eShopPorted.Migrations
                         {
                             Id = 1,
                             AvailableStock = 100,
-                            CatalogBrandId = 2,
-                            CatalogTypeId = 2,
-                            Description = ".NET Bot Black Hoodie",
+                            CatalogBrandId = 1,
+                            CatalogTypeId = 1,
+                            Description = "Velocari Strada SV plug-in hybrid supercar with 1000 cv",
                             MaxStockThreshold = 0,
-                            Name = ".NET Bot Black Hoodie",
+                            Name = "Velocari Strada SV",
                             OnReorder = false,
                             PictureFileName = "1.png",
-                            Price = 19.5m,
+                            Price = 507000m,
                             RestockThreshold = 0
                         },
                         new
                         {
                             Id = 2,
                             AvailableStock = 100,
-                            CatalogBrandId = 2,
+                            CatalogBrandId = 1,
                             CatalogTypeId = 1,
-                            Description = ".NET Black & White Mug",
+                            Description = "Velocari Tipo 6 with 663 cv V6 hybrid powertrain",
                             MaxStockThreshold = 0,
-                            Name = ".NET Black & White Mug",
+                            Name = "Velocari Tipo 6",
                             OnReorder = false,
                             PictureFileName = "2.png",
-                            Price = 8.50m,
+                            Price = 320000m,
                             RestockThreshold = 0
                         },
                         new
                         {
                             Id = 3,
                             AvailableStock = 100,
-                            CatalogBrandId = 5,
+                            CatalogBrandId = 1,
                             CatalogTypeId = 2,
-                            Description = "Prism White T-Shirt",
+                            Description = "Velocari Aurora GT front-engined V8 grand tourer",
                             MaxStockThreshold = 0,
-                            Name = "Prism White T-Shirt",
+                            Name = "Velocari Aurora GT",
                             OnReorder = false,
                             PictureFileName = "3.png",
-                            Price = 12m,
+                            Price = 222000m,
                             RestockThreshold = 0
                         },
                         new
                         {
                             Id = 4,
                             AvailableStock = 100,
-                            CatalogBrandId = 2,
-                            CatalogTypeId = 2,
-                            Description = ".NET Foundation T-shirt",
+                            CatalogBrandId = 1,
+                            CatalogTypeId = 3,
+                            Description = "Velocari Terra X four-door four-seater V12",
                             MaxStockThreshold = 0,
-                            Name = ".NET Foundation T-shirt",
+                            Name = "Velocari Terra X",
                             OnReorder = false,
                             PictureFileName = "4.png",
-                            Price = 12m,
+                            Price = 390000m,
                             RestockThreshold = 0
                         },
                         new
                         {
                             Id = 5,
                             AvailableStock = 100,
-                            CatalogBrandId = 5,
-                            CatalogTypeId = 3,
-                            Description = "Roslyn Red Sheet",
+                            CatalogBrandId = 2,
+                            CatalogTypeId = 1,
+                            Description = "Toranti Furente V12 hybrid flagship",
                             MaxStockThreshold = 0,
-                            Name = "Roslyn Red Sheet",
+                            Name = "Toranti Furente",
                             OnReorder = false,
                             PictureFileName = "5.png",
-                            Price = 8.5m,
+                            Price = 517000m,
                             RestockThreshold = 0
                         },
                         new
@@ -173,83 +173,83 @@ namespace eShopPorted.Migrations
                             Id = 6,
                             AvailableStock = 100,
                             CatalogBrandId = 2,
-                            CatalogTypeId = 2,
-                            Description = ".NET Blue Hoodie",
+                            CatalogTypeId = 3,
+                            Description = "Toranti Monte S super SUV",
                             MaxStockThreshold = 0,
-                            Name = ".NET Blue Hoodie",
+                            Name = "Toranti Monte S",
                             OnReorder = false,
                             PictureFileName = "6.png",
-                            Price = 12m,
+                            Price = 260000m,
                             RestockThreshold = 0
                         },
                         new
                         {
                             Id = 7,
                             AvailableStock = 100,
-                            CatalogBrandId = 5,
-                            CatalogTypeId = 2,
-                            Description = "Roslyn Red T-Shirt",
+                            CatalogBrandId = 3,
+                            CatalogTypeId = 1,
+                            Description = "Nordwerk RS9 track-focused flat-six",
                             MaxStockThreshold = 0,
-                            Name = "Roslyn Red T-Shirt",
+                            Name = "Nordwerk RS9",
                             OnReorder = false,
                             PictureFileName = "7.png",
-                            Price = 12m,
+                            Price = 241000m,
                             RestockThreshold = 0
                         },
                         new
                         {
                             Id = 8,
                             AvailableStock = 100,
-                            CatalogBrandId = 5,
-                            CatalogTypeId = 2,
-                            Description = "Kudu Purple Hoodie",
+                            CatalogBrandId = 3,
+                            CatalogTypeId = 3,
+                            Description = "Nordwerk Terra Turbo performance SUV",
                             MaxStockThreshold = 0,
-                            Name = "Kudu Purple Hoodie",
+                            Name = "Nordwerk Terra Turbo",
                             OnReorder = false,
                             PictureFileName = "8.png",
-                            Price = 8.5m,
+                            Price = 198000m,
                             RestockThreshold = 0
                         },
                         new
                         {
                             Id = 9,
                             AvailableStock = 100,
-                            CatalogBrandId = 5,
+                            CatalogBrandId = 4,
                             CatalogTypeId = 1,
-                            Description = "Cup<T> White Mug",
+                            Description = "Aurelia Nettare S with twin-turbo V6 and carbon tub",
                             MaxStockThreshold = 0,
-                            Name = "Cup<T> White Mug",
+                            Name = "Aurelia Nettare S",
                             OnReorder = false,
                             PictureFileName = "9.png",
-                            Price = 12m,
+                            Price = 240000m,
                             RestockThreshold = 0
                         },
                         new
                         {
                             Id = 10,
                             AvailableStock = 100,
-                            CatalogBrandId = 2,
-                            CatalogTypeId = 3,
-                            Description = ".NET Foundation Sheet",
+                            CatalogBrandId = 4,
+                            CatalogTypeId = 2,
+                            Description = "Aurelia Granluce V6 grand tourer",
                             MaxStockThreshold = 0,
-                            Name = ".NET Foundation Sheet",
+                            Name = "Aurelia Granluce",
                             OnReorder = false,
                             PictureFileName = "10.png",
-                            Price = 12m,
+                            Price = 175000m,
                             RestockThreshold = 0
                         },
                         new
                         {
                             Id = 11,
                             AvailableStock = 100,
-                            CatalogBrandId = 2,
-                            CatalogTypeId = 3,
-                            Description = "Cup<T> Sheet",
+                            CatalogBrandId = 5,
+                            CatalogTypeId = 4,
+                            Description = "Carbon ceramic brake kit for track use",
                             MaxStockThreshold = 0,
-                            Name = "Cup<T> Sheet",
+                            Name = "Carbon Ceramic Brake Kit",
                             OnReorder = false,
                             PictureFileName = "11.png",
-                            Price = 8.5m,
+                            Price = 12500m,
                             RestockThreshold = 0
                         },
                         new
@@ -257,13 +257,13 @@ namespace eShopPorted.Migrations
                             Id = 12,
                             AvailableStock = 100,
                             CatalogBrandId = 5,
-                            CatalogTypeId = 2,
-                            Description = "Prism White TShirt",
+                            CatalogTypeId = 4,
+                            Description = "Forged alloy wheel set 20/21 inch staggered",
                             MaxStockThreshold = 0,
-                            Name = "Prism White TShirt",
+                            Name = "Forged Alloy Wheel Set",
                             OnReorder = false,
                             PictureFileName = "12.png",
-                            Price = 12m,
+                            Price = 8900m,
                             RestockThreshold = 0
                         });
                 });
@@ -286,22 +286,22 @@ namespace eShopPorted.Migrations
                         new
                         {
                             Id = 1,
-                            Type = "Mug"
+                            Type = "Sports Car"
                         },
                         new
                         {
                             Id = 2,
-                            Type = "T-Shirt"
+                            Type = "GT"
                         },
                         new
                         {
                             Id = 3,
-                            Type = "Sheet"
+                            Type = "SUV"
                         },
                         new
                         {
                             Id = 4,
-                            Type = "USB Memory Stick"
+                            Type = "Spare Part"
                         });
                 });
 

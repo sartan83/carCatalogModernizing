@@ -1,14 +1,13 @@
 CatalogTypeName,CatalogBrandName,Description,Name,Price,PictureFileName,availablestock,onreorder
-T-Shirt,.NET,".NET Bot Black Hoodie, and more",.NET Bot Black Hoodie,19.5,1.png,100,false
-Mug,.NET,.NET Black & White Mug,.NET Black & White Mug,8.50,2.png,89,true
-T-Shirt,Other,Prism White T-Shirt,Prism White T-Shirt,12,3.png,56,false
-T-Shirt,.NET,.NET Foundation T-shirt,.NET Foundation T-shirt,12,4.png,120,false
-Sheet,Other,Roslyn Red Sheet,Roslyn Red Sheet,8.5,5.png,55,false
-T-Shirt,.NET,.NET Blue Hoodie,.NET Blue Hoodie,12,6.png,17,false
-T-Shirt,Other,Roslyn Red T-Shirt,Roslyn Red T-Shirt,12,7.png,8,false
-T-Shirt,Other,Kudu Purple Hoodie,Kudu Purple Hoodie,8.5,8.png,34,false
-Mug,Other,Cup<T> White Mug,Cup<T> White Mug,12,9.png,76,false
-Sheet,.NET,.NET Foundation Sheet,.NET Foundation Sheet,12,10.png,11,false
-Sheet,.NET,Cup<T> Sheet,Cup<T> Sheet,8.5,11.png,3,false
-T-Shirt,Other,Prism White TShirt,Prism White TShirt,12,12.png,0,false
-Mug, Other, De los Palotes, pepito, 12, 12.png, 0, false
+Sports Car,Velocari,Velocari Strada SV plug-in hybrid supercar with 1000 cv,Velocari Strada SV,507000,1.png,100,false
+Sports Car,Velocari,Velocari Tipo 6 with 663 cv V6 hybrid powertrain,Velocari Tipo 6,320000,2.png,89,true
+GT,Velocari,Velocari Aurora GT front-engined V8 grand tourer,Velocari Aurora GT,222000,3.png,56,false
+SUV,Velocari,Velocari Terra X four-door four-seater V12,Velocari Terra X,390000,4.png,120,false
+Sports Car,Toranti,Toranti Furente V12 hybrid flagship,Toranti Furente,517000,5.png,55,false
+SUV,Toranti,Toranti Monte S super SUV,Toranti Monte S,260000,6.png,17,false
+Sports Car,Nordwerk,Nordwerk RS9 track-focused flat-six,Nordwerk RS9,241000,7.png,8,false
+SUV,Nordwerk,Nordwerk Terra Turbo performance SUV,Nordwerk Terra Turbo,198000,8.png,34,false
+Sports Car,Aurelia,Aurelia Nettare S with twin-turbo V6 and carbon tub,Aurelia Nettare S,240000,9.png,76,false
+GT,Aurelia,Aurelia Granluce V6 grand tourer,Aurelia Granluce,175000,10.png,11,false
+Spare Part,Other,Carbon ceramic brake kit for track use,Carbon Ceramic Brake Kit,12500,11.png,3,false
+Spare Part,Other,Forged alloy wheel set 20/21 inch staggered,Forged Alloy Wheel Set,8900,12.png,0,false
